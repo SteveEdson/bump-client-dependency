@@ -1,6 +1,6 @@
 {
   "name": "bump-client-dependency",
-  "version": "1.0.3",
+  "version": "1.0.5",
   "description": "Bumps ClientDependency files found in projects like Umbraco",
   "main": "index.js",
   "bin": {

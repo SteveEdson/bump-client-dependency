@@ -20,6 +20,8 @@ function bump(file) {
 
             if(useTimestamp) {
                 newVersionNum = new Date().getTime();
+                // trim numbers of the front, to prevent it being larger than an int
+                newVersionNum = Math.floor(newVersionNum / 1000);
             }
 
             log(`Bumping ${chalk.yellow(file)} from ${chalk.red(oldVersionNum)} to ${chalk.green(newVersionNum)}`);
