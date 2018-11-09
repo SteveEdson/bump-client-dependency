@@ -1,0 +1,18 @@
+{
+  "name": "bump-client-dependency",
+  "version": "1.0.3",
+  "description": "Bumps ClientDependency files found in projects like Umbraco",
+  "main": "index.js",
+  "bin": {
+    "bump-client-dependency": "index.js",
+    "bump-cd": "index.js",
+    "bcd": "index.js"
+  },
+  "keywords": ["client dependency", "bump", "versioning", "cache bust", "umbraco"],
+  "author": "Steve Edson",
+  "license": "ISC",
+  "dependencies": {
+    "chalk": "^2.4.1",
+    "glob": "^7.1.3"
+  }
+}
