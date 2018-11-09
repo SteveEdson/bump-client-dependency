@@ -1,5 +1,7 @@
 # Bump Client Dependency
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/SteveEdson/bump-client-dependency.svg)](https://greenkeeper.io/)
+
 ![Example](example.gif)
 
 A simple script to increase the version number in `ClientDependency.config` files, commonly found in Umbraco CMS projects.
