@@ -8,7 +8,13 @@
     "bump-cd": "index.js",
     "bcd": "index.js"
   },
-  "keywords": ["client dependency", "bump", "versioning", "cache bust", "umbraco"],
+  "keywords": [
+    "client dependency",
+    "bump",
+    "versioning",
+    "cache bust",
+    "umbraco"
+  ],
   "author": "Steve Edson",
   "license": "ISC",
   "dependencies": {

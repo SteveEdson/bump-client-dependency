@@ -13,9 +13,11 @@ log(chalk.blue('Bumping client dependency files'));
 function bump(file) {
     return new Promise(resolve => {
         fs.readFile(file, 'utf8', function(err, contents) {
-            let matches = contents.match(/version="(\d*)"/);
+            const regex = /(clientDependency.*version=")(\d*)(")/;
 
-            let oldVersionNum = parseInt(matches[1]);
+            let matches = contents.match(regex);
+
+            let oldVersionNum = parseInt(matches[2]);
             let newVersionNum = oldVersionNum + 1;
 
             if(useTimestamp) {
@@ -26,7 +28,7 @@ function bump(file) {
 
             log(`Bumping ${chalk.yellow(file)} from ${chalk.red(oldVersionNum)} to ${chalk.green(newVersionNum)}`);
 
-            contents = contents.replace(oldVersionNum, newVersionNum);
+            contents = contents.replace(regex, `$1${newVersionNum}$3`);
 
             fs.writeFile(file, contents, function(err) {
                 resolve();
@@ -37,7 +39,7 @@ function bump(file) {
 
 glob('**/*/config/ClientDependency.config', {}, function(err, files) {
     if(err) console.error(err);
-    
+
     if(files.length == 0) {
         console.warn('Couldn\'t find any files');
         process.exit(1);
