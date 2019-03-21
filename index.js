@@ -37,7 +37,7 @@ function bump(file) {
     });
 }
 
-glob('**/*/config/ClientDependency.config', {}, function(err, files) {
+glob('**/config/ClientDependency.config', {}, function(err, files) {
     if(err) console.error(err);
 
     if(files.length == 0) {
